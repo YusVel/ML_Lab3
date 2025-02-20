@@ -10,7 +10,7 @@ extern long calculate();
 
 
 int main()
-{ /*
+{ 
 	print("Введите переменные a,b (int16_t)\n");
 	print("Введите переменную a: ");
 	a = (int16_t)get_valid_int(-65536, 65565);
@@ -23,13 +23,21 @@ int main()
 	}
 	else if(a<b)
 	{
-		RESULT = (int)(a*a/b);
+		if(b==0)
+		{
+			print("***ERROR! На ноль делить нельзя!!!***\n");
+			RESULT= 0;
+		}
+		else
+		{
+			RESULT = (int)(a*a/b);
+		}
 	}
 	else
 	{
 		RESULT= (int)(b*a/11);
 	}
-	print("RESULT (на Си) = "); p_rax(RESULT);print("\n");     */
+	print("RESULT (на Си) = "); p_rax(RESULT);print("\n");     
 	calculate();
 	print("RESULT (на ASM) = "); p_rax(RESULT);print("\n"); 
 	return 0;

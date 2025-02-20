@@ -5,4 +5,4 @@ all:
 	nasm -f elf64 -F dwarf  print_rax.asm -o print_rax.o
 	gcc -ggdb -c main.c -o main.o
 	gcc -g3 main.o calculate.o get_valid_num.o print.o print_rax.o -o main -no-pie -fno-pie
-	gdb ./main
+	./main
